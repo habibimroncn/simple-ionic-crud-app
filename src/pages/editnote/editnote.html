@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Edit Note
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon ios="ios-close" md="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="note" (ngSubmit)="updateNote()">
+      <ion-item>
+        <ion-label floating color="primary">Title</ion-label>
+        <ion-input type="text" formControlName="title" [(ngModel)]="this.noteServices.title_val"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="primary">Note</ion-label>
+        <ion-textarea formControlName="note" [(ngModel)]="this.noteServices.note_val"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!note.valid" block>Save</button>
+  </form>
+</ion-content>

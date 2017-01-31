@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+    <ion-buttons start>
+        <button button-bro ion-button icon-only (click)="refresh()">
+          <ion-icon name="refresh-circle"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="createNote()">
+          <ion-icon name="add-circle"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<!--<ion-list>
+  <ion-item *ngFor="let gh of this.noteServices.ArrLorem">
+    <h2>{{gh.Nama}}</h2>
+    <h3>{{gh.Desc}}</h3>
+  </ion-item>
+</ion-list>-->
+<ion-list>
+  <ion-item-sliding *ngFor="let nt of this.noteServices.ArrNotes">
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="img/icon-note.png" />
+      </ion-avatar>
+      <h2>{{nt.Title}}</h2>
+      <p>{{nt.Date}}</p>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button icon-only color="primary" (click)="presentActionSheet(nt.ID)">
+        <ion-icon ios="ios-more" md="md-more"></ion-icon>
+      </button>
+      <button ion-button icon-only color="danger" (click)="deleteNote(nt.ID)">
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+</ion-content>
