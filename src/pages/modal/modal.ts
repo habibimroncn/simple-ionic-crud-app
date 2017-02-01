@@ -14,7 +14,7 @@ export class ModalShow {
 				public loadingCtrl: LoadingController, private noteServices: NoteServices ) {
 
       this.note = this.fb.group({
-        title : ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+        title : ['', Validators.compose([Validators.maxLength(30), Validators.required])],
         note  : [''],
       });
   }
@@ -34,4 +34,5 @@ export class ModalShow {
     this.note.reset();
 	  lan.dismiss();
   }
+
 }

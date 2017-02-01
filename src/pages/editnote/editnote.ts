@@ -13,7 +13,7 @@ export class EditNote {
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, private fb: FormBuilder, private noteServices: NoteServices ) {
       this.edhb = this.navParams.get('uid');
       this.note = this.fb.group({
-		        title : ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+		        title : ['', Validators.compose([Validators.maxLength(30), Validators.required])],
             note : [''],
       });
       this.noteServices.getNote(this.edhb);
