@@ -34,5 +34,4 @@ export class ModalShow {
     this.note.reset();
 	  lan.dismiss();
   }
-
 }

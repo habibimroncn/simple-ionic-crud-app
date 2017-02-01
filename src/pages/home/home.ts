@@ -84,12 +84,9 @@ export class HomePage {
 	}
 
 	public refresh() {
-		let loadWait = this.loadingCtrl.create({
-			 content: "Please wait...",
-		});
+		let loadWait = this.noteServices.loadWait("Loading...");
 		loadWait.present();
 		this.noteServices.refreshDatabase();
-		// this.noteServices.refreshLorem();
 		loadWait.dismiss();
 	}
 }
